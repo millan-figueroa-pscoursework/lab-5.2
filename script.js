@@ -2,6 +2,7 @@
 const usernameInput = document.getElementById("username");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirmPasswordInput");
 const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
@@ -66,6 +67,19 @@ passwordInput.addEventListener("input", function (event) {
   // Display the custom message or clear it
   passwordError.textContent = passwordInput.validationMessage;
 });
+// CONFIRM PASSWORD input
+confirmPasswordInput.addEventListener("input", function (event) {
+  if (confirmPasswordInput.value !== passwordInput.value) {
+    confirmPasswordInput.setCustomValidity(
+      "Password must be at least 8 characters long"
+    );
+  } else {
+    confirmPasswordInput.setCustomValidity(""); // Clear custom error if valid
+  }
+  // Display the custom message or clear it
+  confirmPasswordError.textContent = confirmPasswordInput.validationMessage;
+});
+
 // Next apply functionality to throw error if passwords don't match
 // Test Basic Registration: Fill out all fields with valid data and submit the form. Verify the success message and that the username is saved in localStorage (check your browser’s Developer Tools > Application > Local Storage).
 
