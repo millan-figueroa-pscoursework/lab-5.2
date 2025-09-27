@@ -21,7 +21,7 @@ if (savedUserName) {
   usernameInput.value = savedUserName;
 }
 
-console.log(usernameInput);
+console.log(savedUserName);
 
 //Real-time validation: Add input event listeners to each field
 // USERNAME input
@@ -64,5 +64,5 @@ passwordInput.addEventListener("input", function (event) {
     passwordInput.setCustomValidity(""); // Clear custom error if valid
   }
   // Display the custom message or clear it
-  customEmailError.textContent = passwordInput.validationMessage;
+  passwordError.textContent = passwordInput.validationMessage;
 });
