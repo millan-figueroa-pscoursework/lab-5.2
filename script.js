@@ -9,4 +9,8 @@ const submitButton = document.getElementsByTagName("button");
 
 // Load saved username: On page load, check if a username is saved in localStorage. If so, pre-fill the username field.
 
-//Real-time validation: Add input event listeners to each field
+const savedUserName = localStorage.getItem("username");
+
+if (savedUserName === true) {
+  username.value = savedUserName;
+}
