@@ -6,6 +6,12 @@ const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 const submitButton = document.querySelector("button");
+const form = document.getElementById("registrationForm");
+
+// Prevents default form submission
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+});
 
 // Load saved username: On page load, check if a username is saved in localStorage. If so, pre-fill the username field.
 
