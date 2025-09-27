@@ -16,7 +16,9 @@ if (savedUserName) {
 }
 
 console.log(usernameInput);
+
 //Real-time validation: Add input event listeners to each field
+// USERNAME input
 usernameInput.addEventListener("input", function (event) {
   //yells at user if they dont enter input in text format
   if (usernameInput.validity.typeMismatch) {
@@ -24,8 +26,14 @@ usernameInput.addEventListener("input", function (event) {
     //yells at user if they don't enter anything
   } else if (usernameInput.validity.valueMissing) {
     usernameInput.setCustomValidity("We need some input from you!!");
+  } else {
+    usernameInput.setCustomValidity(""); // Clear custom error if valid
   }
+  // Display the custom message or clear it
+  usernameError.textContent = usernameInput.validationMessage;
 });
+
+// EMAIL input
 emailInput.addEventListener("input", function (event) {
   //yells at user if they dont enter input in email format
   //   console.log("This works!");
@@ -34,10 +42,21 @@ emailInput.addEventListener("input", function (event) {
     //yells at user if they don't enter anything
   } else if (emailInput.validity.valueMissing) {
     emailInput.setCustomValidity("We need some input from you!!");
+  } else {
+    emailInput.setCustomValidity(""); // Clear custom error if valid
   }
+  // Display the custom message or clear it
+  emailError.textContent = emailInput.validationMessage;
 });
+// PASSWORD input
 passwordInput.addEventListener("input", function (event) {
-  if (passwordInput.validity.valueMissing) {
-    passwordInput.setCustomValidity("We need some input from you!!");
+  if (passwordInput.validity.tooShort) {
+    passwordInput.setCustomValidity(
+      "Password must be at least 8 characters long"
+    );
+  } else {
+    passwordInput.setCustomValidity(""); // Clear custom error if valid
   }
+  // Display the custom message or clear it
+  customEmailError.textContent = passwordInput.validationMessage;
 });
