@@ -2,7 +2,7 @@
 const usernameInput = document.getElementById("username");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+const confirmPasswordInput = document.getElementById("confirmPassword");
 const emailError = document.getElementById("emailError");
 const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
@@ -67,12 +67,11 @@ passwordInput.addEventListener("input", function (event) {
   // Display the custom message or clear it
   passwordError.textContent = passwordInput.validationMessage;
 });
+
 // CONFIRM PASSWORD input
 confirmPasswordInput.addEventListener("input", function (event) {
   if (confirmPasswordInput.value !== passwordInput.value) {
-    confirmPasswordInput.setCustomValidity(
-      "Password must be at least 8 characters long"
-    );
+    confirmPasswordInput.setCustomValidity("Passwords must match");
   } else {
     confirmPasswordInput.setCustomValidity(""); // Clear custom error if valid
   }
@@ -80,7 +79,6 @@ confirmPasswordInput.addEventListener("input", function (event) {
   confirmPasswordError.textContent = confirmPasswordInput.validationMessage;
 });
 
-// Next apply functionality to throw error if passwords don't match
 // Test Basic Registration: Fill out all fields with valid data and submit the form. Verify the success message and that the username is saved in localStorage (check your browser’s Developer Tools > Application > Local Storage).
 
 // Specific validation functions (validateUsername, validateEmail, etc.) use setCustomValidity based on the input’s validity state or custom logic (like checking if passwords match).
@@ -89,3 +87,4 @@ confirmPasswordInput.addEventListener("input", function (event) {
 // Display a success message (e.g., an alert or update a status message on the page).
 // Save the username to localStorage.
 // Optionally, reset the form.
+submitButton.addEventListener("click", submitForm);
