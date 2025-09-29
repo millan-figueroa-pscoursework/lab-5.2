@@ -17,9 +17,13 @@ if (savedUserName) {
   usernameInput.value = savedUserName;
 }
 
+// Adds event listener to username input to save it to localstorage
+usernameInput.addEventListener("input", function () {
+  localStorage.setItem("username", usernameInput.value);
+});
 console.log(savedUserName);
 
-//Real-time validation: Add input event listeners to each field
+// Real-time validation: Add input event listeners to each field
 // USERNAME input
 usernameInput.addEventListener("input", function (event) {
   //yells at user if they dont enter input in text format
