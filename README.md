@@ -18,10 +18,20 @@
 
 ### How did event.preventDefault() help in handling form submission?
 
+It prevents built in default form submission so I can handle it on my own
+
 ### What is the difference between using HTML5 validation attributes and JavaScript-based validation? Why might you use both?
+
+HTML5 validation attributes are built in but don't allow for much flexibility. using both gives the dev more control.
 
 ### Explain how you used localStorage to persist and retrieve the username. What are the limitations of localStorage for storing sensitive data?
 
+I added an eventListener to the username input with a function that saves the string to localStorage so the browser remembers it when it refreshes. The limitation of localStorage is that its not secure and shouldn't be used for sensitive data.
+
 ### Describe a challenge you faced in implementing the real-time validation and how you solved it.
 
+The problems I faced were mainly from mismatched id attributes from my HTML form, but once I updated those the real time validation conditionals where it checked the validity of each input worked perfectly
+
 ### How did you ensure that custom error messages were user-friendly and displayed at the appropriate times?
+
+I used setCustomValidity with my own error message instead of the default error message that doesn't tell the user much information.

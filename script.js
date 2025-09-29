@@ -91,13 +91,3 @@ form.addEventListener("submit", function (event) {
   // Display a success message
   alert("Form submitted!");
 });
-
-// Test Basic Registration: Fill out all fields with valid data and submit the form. Verify the success message and that the username is saved in localStorage (check your browser’s Developer Tools > Application > Local Storage).
-
-// Specific validation functions (validateUsername, validateEmail, etc.) use setCustomValidity based on the input’s validity state or custom logic (like checking if passwords match).
-
-// If all fields are valid:
-// Display a success message (e.g., an alert or update a status message on the page).
-// Save the username to localStorage.
-// Optionally, reset the form.
-// submitButton.addEventListener("click", submitForm);
