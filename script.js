@@ -14,6 +14,12 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 });
 
+// Add manual validation
+if (!form.checkValidity()) {
+  form.reportValidity();
+  alert("Form submitted!");
+}
+
 // Load saved username: On page load, check if a username is saved in localStorage. If so, pre-fill the username field.
 
 const savedUserName = localStorage.getItem("username");
